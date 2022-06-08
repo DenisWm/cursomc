@@ -68,7 +68,7 @@ public class CategoriaResource {
 	public ResponseEntity<Page<CategoriaDTO>> findPage(
 			@RequestParam(value="page", defaultValue="0") Integer page, 
 			@RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage, 
-			@RequestParam(value="ordeBy", defaultValue="nome") String orderBy, 
+			@RequestParam(value="orderBy", defaultValue="nome") String orderBy, 
 			@RequestParam(value="direction", defaultValue="ASC") String direction) {
 		Page<Categoria> pag = service.findPage(page, linesPerPage, orderBy, direction);
 		Page<CategoriaDTO> pagDTO = pag.map(obj -> new CategoriaDTO(obj));
